@@ -1,0 +1,8 @@
+#tablero{
+    text-align: center;
+}
+.cuadro{
+    width: 85px;
+    height: 80px;
+    font-size: 30px;
+}
