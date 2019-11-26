@@ -4,40 +4,241 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Gato</title>
+    <link rel="stylesheet" href="diseño/diseño.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="estilos.css">
+    <script src="js/jquery.js"></script>
+
 </head>
 <body>
-
-    <section id="principal">
-        <article id="comandos">
-            jugador 1:
-            <input type="text" id="jugador1"><br>
-            jugador 2:
-            <input type="text" id="jugador2"><br>
-            <input type="button" id="iniciar" value="comenzar">
-            <label id="turnoJugador"></label>
-        </article>
-        <article id="tablero">
-            <input type="button" id="b0">
-            <input type="button" id="b1">
-            <input type="button" id="b2"><br>
-
-            <input type="button" id="b3">
-            <input type="button" id="b4">
-            <input type="button" id="b5"><br>
-
-            <input type="button" id="b6">
-            <input type="button" id="b7">
-            <input type="button" id="b8"><br>
-        </article>
-    </section>
-
-    <script
-        src="https://code.jquery.com/jquery-3.4.1.min.js"
-        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-        crossorigin="anonymous"></script>
-    <script src="jquery.js"></script>
-
+    <h1 id="b">Bienvenido al juego del gato</h1>
+    <button class="btn btn-success">Empezar</button>
+    <div>
+        <div align="center" class="cuadros" style="display: none;">
+                <div class="card-deck" style="width: 400px">
+                  <div class="card" id="1" style="height: 70px;">
+                  </div>
+                  <div class="card" id="2">
+                  </div>
+                  <div class="card" id="3">
+                  </div>
+                </div>
+                <div class="card-deck mt-2" style="width: 400px">
+                  <div class="card" id="4" style="height: 70px;">
+                  </div>
+                  <div class="card" id="5">
+                  </div>
+                  <div class="card" id="6">
+                  </div>
+                </div>
+                <div class="card-deck mt-2" style="width: 400px">
+                  <div class="card" id="7" style="height: 70px;">
+                  </div>
+                  <div class="card" id="8">
+                  </div>
+                  <div class="card" id="9">
+                  </div>
+                </div>
+        </div>
+    </div>
+    
 </body>
 </html>
+<script>
+
+
+    $(document).ready(function () {
+        $("button").click(function(){
+            $(".cuadros").slideToggle(3000);
+        });
+    var uno=0,dos=0,tres=0,cuatro=0,cinco=0,seis=0,siete=0,ocho=0,nueve=0;
+    function verificar(){
+        
+        if((uno+dos+tres)=='6')
+        {
+            Ganador();
+        }
+        if((cuatro+cinco+seis)=='15')
+        {
+            Ganador();
+        }
+        if((siete+ocho+nueve)=='24')
+        {
+            Ganador();
+        }
+        if((uno+cuatro+siete)=='12')
+        {
+            Ganador();
+        }
+        if((dos+cinco+ocho)=='15')
+        {
+            Ganador();
+        }
+        if((tres+seis+nueve)=='18')
+        {
+            Ganador();
+        }
+        if((uno+cinco+nueve)=='15')
+        {
+            Ganador();
+        }
+        if((tres+cinco+siete)=='15')
+        {
+            Ganador();
+        }
+    }
+    function Ganador() {
+        alert("GANASTES!!!! :D")
+    }
+    function Ganador2() {
+        alert("HAS PERDIDO!!!! :(")
+    }
+    function Compu(){
+        var i=0;
+        do{
+        var x=Math.floor(Math.random() * 10);
+        if (x== '1' && uno==0)
+        {
+            $("#1").css({"background-color":"black"})
+            $("#1").text('O').css({"font-size":"15px", "color":"#ffffff"})
+            i=1;
+        }
+        if (x=='2' && dos==0)
+        {
+            $("#2").css({"background-color":"black"})
+            $("#2").text('O').css({"font-size":"15px", "color":"#ffffff"})
+            i=1;
+        }
+        if (x=='3' && tres==0)
+        {
+            $("#3").css({"background-color":"black"})
+            $("#3").text('O').css({"font-size":"15px", "color":"#ffffff"})
+            i=1;
+        }
+        if (x=='4' && cuatro==0)
+        {
+            $("#4").css({"background-color":"black"})
+            $("#4").text('O').css({"font-size":"15px", "color":"#ffffff"})
+            i=1;
+        }
+        if (x=='5' && cinco==0)
+        {
+            $("#5").css({"background-color":"black"})
+            $("#5").text('O').css({"font-size":"15px", "color":"#ffffff"})
+            i=1;
+        }
+        if (x=='6' && seis==0)
+        {
+            $("#6").css({"background-color":"black"})
+            $("#6").text('O').css({"font-size":"15px", "color":"#ffffff"})
+            i=1;
+        }
+        if (x=='7' && siete==0)
+        {
+            $("#7").css({"background-color":"black"})
+            $("#7").text('O').css({"font-size":"15px", "color":"#ffffff"})
+            $("#7").html(img);
+            i=1;
+        }
+        if (x=='8' && ocho==0)
+        {
+            $("#8").css({"background-color":"black"})
+            $("#8").text('O').css({"font-size":"15px", "color":"#ffffff"})
+            i=1;
+        }
+        if (x=='9' && nueve==0)
+        {
+            $("#9").css({"background-color":"black"})
+            $("#9").text('O').css({"font-size":"15px", "color":"#ffffff"})
+            i=1;
+        }
+        }while(i!=1)
+    }
+    // function Equis(){
+    //         ().css({"background-color":"blue"})
+    //         ().text('X').css({"font-size":"20px"});
+    //     }
+        $("#1").click(function(){
+            if(uno==0){
+            uno=1;
+            $("#1").css({"background-color":"red"})
+            $("#1").text('X').css({"font-size":"15px", "color":"#ffffff"})
+            verificar();
+            Compu();
+            }
+        })
+        $("#2").click(function(){
+            if(dos==0){
+            dos=2;
+            $("#2").css({"background-color":"red"})
+            $("#2").text('X').css({"font-size":"15px", "color":"#ffffff"})
+            verificar();
+            Compu();
+            }
+        })
+        $("#3").click(function(){
+            if(tres==0){
+            tres=3;
+            $("#3").css({"background-color":"red"})
+            $("#3").text('X').css({"font-size":"15px", "color":"#ffffff"})
+            verificar();
+            Compu();
+            }
+        })
+        $("#4").click(function(){
+            if(cuatro==0){
+            cuatro=4;
+            $("#4").css({"background-color":"red"})
+            $("#4").text('X').css({"font-size":"15px", "color":"#ffffff"})
+            verificar();
+            Compu();
+            }
+        })
+        $("#5").click(function(){
+            if(cinco==0){
+            cinco=5;
+            $("#5").css({"background-color":"red"})
+            $("#5").text('X').css({"font-size":"15px", "color":"#ffffff"})
+            verificar();
+            Compu();
+            }
+        })
+        $("#6").click(function(){
+            if(seis==0){
+            seis=6;
+            $("#6").css({"background-color":"red"})
+            $("#6").text('X').css({"font-size":"15px", "color":"#ffffff"})
+            verificar();
+            Compu();
+            }
+        })
+        $("#7").click(function(){
+            if(siete==0){
+            siete=7;
+            $("#7").css({"background-color":"red"})
+            $("#7").text('X').css({"font-size":"15px", "color":"#ffffff"})
+            verificar();      
+            Compu();
+            }      
+        })
+        $("#8").click(function(){
+            if(ocho==0){
+            ocho=8;
+            $("#8").css({"background-color":"red"})
+            $("#8").text('X').css({"font-size":"15px", "color":"#ffffff"})
+            verificar();
+            Compu();
+            }
+        })
+        $("#9").click(function(){
+            if(nueve==0){
+            nueve=9;
+            $("#9").css({"background-color":"red"})
+            $("#9").text('X').css({"font-size":"15px", "color":"#ffffff"})
+            verificar();
+            Compu();
+            }
+        })
+})
+</script>
