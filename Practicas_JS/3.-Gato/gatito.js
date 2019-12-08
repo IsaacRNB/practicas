@@ -10,7 +10,7 @@ $(".col").click(function() {
 	         
 	if (turno=="jugador1")
 	{
-		$(this).html("o");
+		$(this).html("<h1>o");
         turno = "jugador2"
         this.setAttribute("data-value", "o");
         console.log($(this).text());
@@ -19,7 +19,7 @@ $(".col").click(function() {
 
 	else
 	{ 
-		$(this).html("x");
+		$(this).html("<h1>x");
         turno = "jugador1"
         console.log($(this).text());
         this.setAttribute("data-value", "x");
@@ -34,7 +34,7 @@ $(".col").click(function() {
     || ($("#77").attr('data-value') == 'x' && ($("#88").attr('data-value') == 'x') && $("#99").attr('data-value') == 'x')
     || ($("#11").attr('data-value') == 'x' && ($("#55").attr('data-value') == 'x') && $("#99").attr('data-value') == 'x')
     || ($("#33").attr('data-value') == 'x' && ($("#55").attr('data-value') == 'x') && $("#77").attr('data-value') == 'x')) {
-         alert("Ganaste , X");
+         alert("jugador 1, ganador");
          $('.col').html("");
          $('.col').attr("data-value", "0");
      }
@@ -47,7 +47,7 @@ $(".col").click(function() {
      || ($("#77").attr('data-value') == 'o' && ($("#88").attr('data-value') == 'o') && $("#99").attr('data-value') == 'o')
      || ($("#11").attr('data-value') == 'o' && ($("#55").attr('data-value') == 'o') && $("#99").attr('data-value') == 'o')
      || ($("#33").attr('data-value') == 'o' && ($("#55").attr('data-value') == 'o') && $("#77").attr('data-value') == 'o')) {
-          alert("Ganaste , O");
+          alert("jugador 2, ganador");
           $('.col').html("");
           $('.col').attr("data-value", "0");
       }
