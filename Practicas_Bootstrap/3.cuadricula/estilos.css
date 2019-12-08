@@ -1,0 +1,10 @@
+.cuadricula{
+    border: 3px solid tomato; 
+    height: 90px;
+    width: 90px; 
+    display: inline-block;
+    
+}
+.cuadros :first-child, .cuadros :last-child, .cuadros :nth-child(5), .cuadros :nth-last-child(5){
+    background-color: black;
+}
